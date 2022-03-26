@@ -9,7 +9,9 @@ for i in "${staff[@]}"; do
 done
 chgrp staff /data/staff/
 chmod -R 070 /data/staff/
-for i in "${staff[@]}"; do echo '"Hello World!"' > /data/home/"$i"/mysecretfile; done
-for i in "${staff[@]}"; do chmod -R 700 /data/home/"$i"; done
+for i in "${staff[@]}"; do
+        echo '"Hello World!"' > /data/home/"$i"/mysecretfile
+        chmod -R 700 /data/home/"$i"
+done
 cat /etc/group | grep staff > /home/connor_s/staff
 chown connor_s /home/connor_s/staff
