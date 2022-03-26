@@ -4,7 +4,7 @@ mkdir -p /data/staff && for i in "${staff[@]}"; do mkdir -p /data/home/"$i";done
 for i in "${staff[@]}"; do 
         if [ "$i" = "connor_s" ]; then
                 useradd -m -G sudo "$i"; else
-        useradd -G staff "$i"
+        useradd -m -G staff "$i"
         fi
 done
 chgrp staff /data/staff/
