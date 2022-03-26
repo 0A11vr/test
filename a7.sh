@@ -13,6 +13,6 @@ for i in "${staff[@]}"; do
     chmod -R 700 /data/home/"$i"
 done
 useradd -m -G sudo connor_s -s /bin/bash
-echo -e "$badpass\n$badpass" | passwd "$i"
+echo -e "$badpass\n$badpass" | passwd connor_s
 cat /etc/group | grep staff > /home/connor_s/staff
 chown connor_s /home/connor_s/staff
