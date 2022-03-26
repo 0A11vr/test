@@ -2,7 +2,7 @@
 staff=("doe_j" "hitchcock_a" "joplin_j" "connor_s")
 mkdir -p /data/staff && for i in "${staff[@]}"; do mkdir -p /data/home/"$i";done
 for i in "${staff[@]}"; do 
-        if [ "${staff[*]}" = "connor_s" ]; then
+        if [ "$i" = "connor_s" ]; then
                 useradd -m -G sudo "$i"; else
         useradd -G staff "$i"
         fi
