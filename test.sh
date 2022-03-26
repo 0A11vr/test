@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 staff=("doe_j" "hitchcock_a" "joplin_j")
 mkdir -p /data/staff && for i in "${staff[@]}"; do mkdir -p /data/home/"$i";done
 for i in "${staff[@]}"; do adduser "$i"; done
