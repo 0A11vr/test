@@ -10,7 +10,7 @@ done
 chgrp staff /data/staff/
 chmod -R 070 /data/staff/
 for i in "${staff[@]}"; do
-        echo '"Hello World!"' > /data/home/"$i"/mysecretfile
+        echo '"Hello World!"' > /data/home/"$i"/mysecretfile && \
         chmod -R 700 /data/home/"$i"
 done
 cat /etc/group | grep staff > /home/connor_s/staff
