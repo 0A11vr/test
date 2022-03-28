@@ -7,7 +7,7 @@ chmod -R 070 /data/staff/
 for i in "${staff[@]}"; do 
     mkdir -p /data/home/"$i"
     useradd -m -G staff "$i" -s /bin/bash
-    echo "$i" | chpasswd $badpass
+    echo "$i":$badpass | chpasswd
     echo '"Hello World!"' > /data/home/"$i"/mysecretfile
     chown -R "$i" /data/home/"$i"
     chmod -R 700 /data/home/"$i"
