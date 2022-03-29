@@ -1,11 +1,11 @@
 #!/bin/bash
 staff=("doe_j" "hitchcock_a" "joplin_j")
 badpass='asdfASDF1234!@#$'
-mkdir -p /data/staff
+mkdir -p /data/{staff,home}
 chgrp staff /data/staff/
 chmod -R 070 /data/staff/
 for i in "${staff[@]}"; do 
-    mkdir -p /data/home/"$i"
+    mkdir /data/home/"$i"
     useradd -m -G staff "$i" -s /bin/bash
     echo "$i":$badpass | chpasswd
     echo '"Hello World!"' > /data/home/"$i"/mysecretfile
